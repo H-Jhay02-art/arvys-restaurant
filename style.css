@@ -1,0 +1,357 @@
+/* ========================================
+   MEAT HOUSE - Restaurant Styles
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+    --bg: #120b08;
+    --bg-light: #1d110c;
+    --card: #24150e;
+    --accent: #e85d04;
+    --accent-light: #ff8c42;
+    --cream: #fff3df;
+    --muted: #c9b8a5;
+    --border: rgba(255, 243, 223, 0.12);
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: var(--bg);
+    color: var(--cream);
+    line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 7%;
+    background: rgba(18, 11, 8, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo span,
+.logo {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    color: var(--cream);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--accent-light);
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 7% 80px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(18, 11, 8, 0.95) 0%,
+            rgba(18, 11, 8, 0.7) 48%,
+            rgba(18, 11, 8, 0.35) 100%
+        ),
+        url('images/hero-meat.jpg') center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.hero h1::first-letter {
+    color: var(--accent);
+}
+
+.hero p {
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+}
+
+/* ---------- BUTTONS ---------- */
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    padding: 14px 28px;
+    border-radius: 4px;
+
+    background: var(--accent);
+    color: white;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(232, 93, 4, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ---------- GENERAL SECTIONS ---------- */
+
+section:not(.hero) {
+    padding: 100px 7%;
+}
+
+section h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 45px;
+}
+
+/* ---------- MENU ---------- */
+
+#Menue {
+    background: var(--bg-light);
+    text-align: center;
+}
+
+.Menue-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.food-card {
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    text-align: left;
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(232, 93, 4, 0.5);
+}
+
+.food-card img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    background: #2c1a12;
+}
+
+.food-card h3,
+.food-card p,
+.food-card button {
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+.food-card h3 {
+    margin-top: 22px;
+    margin-bottom: 5px;
+
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.food-card p {
+    color: var(--accent-light);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.food-card button {
+    margin-bottom: 22px;
+}
+
+/* ---------- ABOUT ---------- */
+
+#About {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#About p {
+    max-width: 700px;
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* ---------- CONTACT ---------- */
+
+#contact {
+    background: #0d0705;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 25px;
+}
+
+#contact p {
+    color: var(--muted);
+    margin: 8px 0;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    padding: 40px 7%;
+    text-align: center;
+    background: #080403;
+    border-top: 1px solid var(--border);
+}
+
+.footer-logo {
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #8f8175;
+    font-size: 0.85rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 850px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+    }
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    section:not(.hero) {
+        padding: 80px 5%;
+    }
+
+    .Menue-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        position: relative;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 85vh;
+        padding-top: 80px;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .Menue-container {
+        grid-template-columns: 1fr;
+    }
+
+    section:not(.hero) {
+        padding: 65px 5%;
+    }
+}
